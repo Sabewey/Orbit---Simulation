@@ -101,11 +101,12 @@ window.addEventListener('keyup', (key) => {
 
 
 //                -------------- HERE ARE THE ACTUAL FUNCTIONS EXECUTING THE METHODS ----------------
-
+//This is my forward euler, and it seems to be working just fine
 function euler() {
 
     draw_every_100_step = 0;
-
+    
+    //This is just scaling down to draw on a small canvas
     cx = x / 100000000;
     cy = y / 100000000;
 
@@ -151,7 +152,7 @@ function euler() {
         y2 = y2 + Ys2 * dt;
 
 
-
+        //Just for visualisation
         if (draw_every_100_step == 100) {
             //drawing vars
             cx = x / 100000000;
@@ -186,7 +187,8 @@ function euler() {
         draw_every_100_step = draw_every_100_step + 100;
 
     }
-
+    
+    //Drawing the end point
     cx = x / 100000000;
     cy = y / 100000000;
 
@@ -200,6 +202,8 @@ function euler() {
 }
 
 
+
+//                                               My try on the EULER-CROMER METHOD
 function impEuler() {
 
     draw_every_100_step = 0;
@@ -254,31 +258,17 @@ function impEuler() {
         //speed from point 2
         Xs = Xs + ax * dt;
         Ys = Ys + ay * dt;
-        /*
-        //Calculate the average force from point 1 and 2
-        average_Fx = (Fx + original_Fx) / 2;
-        average_Fy = (Fy + original_Fy) / 2;
 
-        //calculating the acceleration
-        average_ax = average_Fx / m;
-        average_ay = average_Fy / m;
-
-        */
         //restarting from point 1
         x = original_x;
         y = original_y;
 
-        /*
-        //calculating point 3
-        Xs = Xs + average_ax * dt;
-        Ys = Ys + average_ay * dt;
-        */
         x = x + Xs * dt;
         y = y + Ys * dt;
 
 
 
-        //Calculating Larger
+        //Calculating Larger (This part is the same as Forward Euler because the sun is barely moving anyways)
         ax2 = -Fx / M;
         ay2 = -Fy / M;
 
