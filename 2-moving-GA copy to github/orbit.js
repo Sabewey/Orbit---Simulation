@@ -7,11 +7,11 @@ Earth's distance: 149.6 * Math.pow(10, 9)
 G = 6.67408 * Math.pow(10, -11)
 */
 
-//Smaller planets cordinates
+//Smaller planets cordinates (Earth)
 x = 149.6 * Math.pow(10, 9);
 y = 0.1
 
-//Larger planet cord
+//Larger planet cord (Sun)
 x2 = 0.1;
 y2 = 0.1;
 
@@ -23,11 +23,11 @@ M = 1.989 * Math.pow(10, 30);         //mass in kg
 // Step-size (recommend 10 000 seconds) with loops on i = 3300
 dt = 32000;
 
-//Smaller x-y speed
+//Smaller x-y speed (Earth's orbital speed initially)
 Xs = 0;
 Ys = 30 * Math.pow(10, 3);
 
-//Larger x-y speed
+//Larger x-y speed (Sun is not moving)
 Xs2 = 0;
 Ys2 = 0;
 
@@ -98,6 +98,9 @@ window.addEventListener('keyup', (key) => {
     }
 });
 
+
+
+//                -------------- HERE ARE THE ACTUAL FUNCTIONS EXECUTING THE METHODS ----------------
 
 function euler() {
 
